@@ -1,65 +1,50 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-
+import Head from 'next/head';
+import Avatar from '../components/Avatar';
+import { ViewGridIcon, MicrophoneIcon } from '@heroicons/react/solid';
+import { SearchIcon } from '@heroicons/react/outline';
+import Image from 'next/image';
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Google</title>
+        <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <header className='flex w-full p-5 justify-between text-sm text-gray-700'>
+        {/* Left */}
+        <div className='flex space-x-4 items-center'>
+          <p className='link'>About</p>
+          <p className='link'>Store</p>
         </div>
-      </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+        {/* Right */}
+        <div className='flex space-x-4 items-center'>
+          <p className='link'>Gmail</p>
+          <p className='link'>Images</p>
+
+          {/* Icon */}
+          <ViewGridIcon className='h-10 w-10  p-2 rounded-full hover:bg-gray-100 cursor-pointer' />
+
+          <Avatar url='https://image.flaticon.com/icons/png/512/523/523461.png' />
+        </div>
+      </header>
+
+      {/* Body */}
+      <form action=''>
+        <Image
+          src='https://s3.amazonaws.com/freebiesupply/large/2x/google-logo-transparent.png'
+          height={100}
+          width={300}
+        />
+
+        <div className='flex w-full mt-5 hover:shadow-lg focus-within:shadow-lg'>
+          <SearchIcon className='h-5 mr-3 text-gray-500 ' />
+          <input type='text' className='focus:outline-none bg-red-500' />
+          <MicrophoneIcon className='h-10 w-10  p-2 rounded-full hover:bg-gray-100 cursor-pointer' />
+        </div>
+      </form>
+      {/* Footer */}
     </div>
-  )
+  );
 }
