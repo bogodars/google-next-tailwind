@@ -38,9 +38,9 @@ export default function Home() {
           width={300}
         />
 
-        <div className='flex w-full mt-5 hover:shadow-lg focus-within:shadow-lg'>
+        <div className='flex w-full mt-5 hover:shadow-lg focus-within:shadow-lg max-w-md rounded-full border border-gray-200 px-5 py-3 items-center'>
           <SearchIcon className='h-5 mr-3 text-gray-500 ' />
-          <input type='text' className='focus:outline-none bg-red-500' />
+          <input type='text' className='focus:outline-none flex-grow' />
           <MicrophoneIcon className='h-10 w-10  p-2 rounded-full hover:bg-gray-100 cursor-pointer' />
         </div>
       </form>
